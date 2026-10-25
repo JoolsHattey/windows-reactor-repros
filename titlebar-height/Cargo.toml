@@ -1,0 +1,8 @@
+[package]
+name = "repro-titlebar-height"
+version = "0.0.0"
+edition = "2024"
+publish = false
+
+[dependencies]
+windows-reactor = { workspace = true }

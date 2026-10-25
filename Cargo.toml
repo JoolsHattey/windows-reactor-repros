@@ -1,0 +1,13 @@
+[workspace]
+resolver = "3"
+members = [
+    "listview-reorder-selected-index",
+    "titlebar-right-padding-scale",
+    "titlebar-height",
+    "pointer-side-buttons-handled",
+    "tray-menu-wait-cursor",
+]
+
+[workspace.dependencies]
+# microsoft/windows-rs master as of 2026-10-24 (0496ec1)
+windows-reactor = { git = "https://github.com/microsoft/windows-rs", rev = "0496ec19116f1dac690daf31fcb96769118d9bac" }

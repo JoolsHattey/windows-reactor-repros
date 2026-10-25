@@ -1,0 +1,198 @@
+
+thread 'main' (8212) panicked at /kache/.cargo\git\checkouts\windows-rs-a5de4a2dc783ec71\0496ec1\crates\libs\reactor\src\native\winui\adapter.rs:260:41:
+called `Result::unwrap()` on an `Err` value: Native(Error { code: HRESULT(0x80070057), message: "The parameter is incorrect." })
+stack backtrace:
+   0: std::panicking::panic_handler
+             at /rustc/8bab26f4f68e0e26f0bb7960be334d5b520ea452/library\std\src\panicking.rs:689
+   1: core::panicking::panic_fmt
+             at /rustc/8bab26f4f68e0e26f0bb7960be334d5b520ea452/library\core\src\panicking.rs:80
+   2: core::result::unwrap_failed
+             at /rustc/8bab26f4f68e0e26f0bb7960be334d5b520ea452/library\core\src\result.rs:1867
+   3: enum2$<core::result::Result<tuple$<>,enum2$<windows_reactor::native::winui::WinUiError> > >::unwrap
+             at /rustc/8bab26f4f68e0e26f0bb7960be334d5b520ea452/library\core\src\result.rs:1233
+   4: windows_reactor::native::winui::impl$200::apply
+             at /kache/.cargo\git\checkouts\windows-rs-a5de4a2dc783ec71\0496ec1\crates\libs\reactor/src\native\winui\adapter.rs:260
+   5: windows_reactor::reconcile::Runtime<windows_reactor::native::winui::WinUiAdapter>::apply_plan<windows_reactor::native::winui::WinUiAdapter,windows_reactor::component::impl$40::apply_render_with_contexts::closure_env$0<windows_reactor::native::winui::WinUiA
+             at /kache/.cargo\git\checkouts\windows-rs-a5de4a2dc783ec71\0496ec1\crates\libs\reactor/src\reconcile.rs:1624
+   6: windows_reactor::reconcile::Runtime<windows_reactor::native::winui::WinUiAdapter>::update_subtree_inner<windows_reactor::native::winui::WinUiAdapter,windows_reactor::component::impl$40::apply_render_with_contexts::closure_env$0<windows_reactor::native::win
+             at /kache/.cargo\git\checkouts\windows-rs-a5de4a2dc783ec71\0496ec1\crates\libs\reactor/src\reconcile.rs:2149
+   7: windows_reactor::reconcile::Runtime<windows_reactor::native::winui::WinUiAdapter>::update_subtree_before_apply<windows_reactor::native::winui::WinUiAdapter,windows_reactor::declaration::View,windows_reactor::component::impl$40::apply_render_with_contexts::
+             at /kache/.cargo\git\checkouts\windows-rs-a5de4a2dc783ec71\0496ec1\crates\libs\reactor/src\reconcile.rs:2081
+   8: windows_reactor::component::ComponentHost<windows_reactor::native::winui::WinUiAdapter>::apply_render_with_contexts<windows_reactor::native::winui::WinUiAdapter>
+             at /kache/.cargo\git\checkouts\windows-rs-a5de4a2dc783ec71\0496ec1\crates\libs\reactor/src\component.rs:2680
+   9: windows_reactor::component::ComponentHost<windows_reactor::native::winui::WinUiAdapter>::apply_render<windows_reactor::native::winui::WinUiAdapter>
+             at /kache/.cargo\git\checkouts\windows-rs-a5de4a2dc783ec71\0496ec1\crates\libs\reactor/src\component.rs:2645
+  10: windows_reactor::component::impl$40::drain::closure$1<windows_reactor::native::winui::WinUiAdapter>
+             at /kache/.cargo\git\checkouts\windows-rs-a5de4a2dc783ec71\0496ec1\crates\libs\reactor/src\component.rs:1846
+  11: enum2$<core::option::Option<windows_reactor::component::ComponentRender> >::map<windows_reactor::component::ComponentRender,windows_reactor::reconcile::UpdateStats,windows_reactor::component::impl$40::drain::closure_env$1<windows_reactor::native::winui::Wi
+             at /rustc/8bab26f4f68e0e26f0bb7960be334d5b520ea452/library\core\src\option.rs:1162
+  12: windows_reactor::component::ComponentHost<windows_reactor::native::winui::WinUiAdapter>::drain<windows_reactor::native::winui::WinUiAdapter>
+             at /kache/.cargo\git\checkouts\windows-rs-a5de4a2dc783ec71\0496ec1\crates\libs\reactor/src\component.rs:1846
+  13: windows_reactor::native::app::open_component_window::closure$0
+             at /kache/.cargo\git\checkouts\windows-rs-a5de4a2dc783ec71\0496ec1\crates\libs\reactor/src\native\app\mod.rs:913
+  14: core::ops::function::impls::impl$2::call_once<tuple$<>,windows_reactor::native::app::open_component_window::closure_env$0>
+             at /rustc/8bab26f4f68e0e26f0bb7960be334d5b520ea452/library\core\src\ops\function.rs:287
+  15: windows_reactor::native::app::WindowDispatch::run<enum2$<core::result::Result<tuple$<>,windows_result::error::Error> >,ref$<windows_reactor::native::app::open_component_window::closure_env$0> >
+             at /kache/.cargo\git\checkouts\windows-rs-a5de4a2dc783ec71\0496ec1\crates\libs\reactor/src\native\app\mod.rs:486
+  16: windows_reactor::native::app::impl$9::callback::closure$0<windows_reactor::native::app::open_component_window::closure_env$0>
+             at /kache/.cargo\git\checkouts\windows-rs-a5de4a2dc783ec71\0496ec1\crates\libs\reactor/src\native\app\mod.rs:467
+  17: windows_reactor::native::app::invoke_registered_app_callback
+             at /kache/.cargo\git\checkouts\windows-rs-a5de4a2dc783ec71\0496ec1\crates\libs\reactor/src\native\app\mod.rs:349
+  18: windows_reactor::native::app::impl$5::wake::closure$0
+             at /kache/.cargo\git\checkouts\windows-rs-a5de4a2dc783ec71\0496ec1\crates\libs\reactor/src\native\app\mod.rs:335
+  19: windows_reactor::native::app::impl$4::enqueue::closure$0<windows_reactor::native::app::impl$5::wake::closure_env$0>
+             at /kache/.cargo\git\checkouts\windows-rs-a5de4a2dc783ec71\0496ec1\crates\libs\reactor/src\native\app\mod.rs:291
+  20: windows_reactor::native::bindings::DispatcherQueueHandlerBox<windows_reactor::native::app::impl$4::enqueue::closure_env$0<windows_reactor::native::app::impl$5::wake::closure_env$0> >::Invoke<windows_reactor::native::app::impl$4::enqueue::closure_env$0<wind
+             at /kache/.cargo\git\checkouts\windows-rs-a5de4a2dc783ec71\0496ec1\crates\libs\reactor/src\native\bindings.rs:3508
+  21: WinUICreateDispatcherQueueController
+  22: CoreUIRouteToTestRegistrar
+  23: CoreUIRouteToTestRegistrar
+  24: CoreUIRouteToTestRegistrar
+  25: CoreUIRouteToTestRegistrar
+  26: CoreUIRouteToTestRegistrar
+  27: CoreUIRouteToTestRegistrar
+  28: CoreUIRouteToTestRegistrar
+  29: CoreUIRouteToTestRegistrar
+  30: CoreUIRouteToTestRegistrar
+  31: CoreUIRouteToTestRegistrar
+  32: CoreUIRouteToTestRegistrar
+  33: CoreUIRouteToTestRegistrar
+  34: CoreUIRouteToTestRegistrar
+  35: CallWindowProcW
+  36: GetFocus
+  37: GetWindowDpiAwarenessContext
+  38: KiUserCallbackDispatcher
+  39: NtUserGetMessage
+  40: GetMessageW
+  41: XamlCheckProcessRequirements
+  42: XamlCheckProcessRequirements
+  43: XamlCheckProcessRequirements
+  44: windows_reactor::native::bindings::impl$44::Start::closure$0<ref$<windows_reactor::native::bindings::ApplicationInitializationCallback> >
+             at /kache/.cargo\git\checkouts\windows-rs-a5de4a2dc783ec71\0496ec1\crates\libs\reactor/src\native\bindings.rs:343
+  45: windows_core::imp::factory_cache::FactoryCache<windows_reactor::native::bindings::Application,windows_reactor::native::bindings::IApplicationStatics>::call<windows_reactor::native::bindings::Application,windows_reactor::native::bindings::IApplicationStatic
+             at /kache/.cargo\git\checkouts\windows-rs-a5de4a2dc783ec71\0496ec1\crates\libs\core/src\imp\factory_cache.rs:36
+  46: windows_reactor::native::bindings::Application::IApplicationStatics<tuple$<>,windows_reactor::native::bindings::impl$44::Start::closure_env$0<ref$<windows_reactor::native::bindings::ApplicationInitializationCallback> > >
+             at /kache/.cargo\git\checkouts\windows-rs-a5de4a2dc783ec71\0496ec1\crates\libs\reactor/src\native\bindings.rs:362
+  47: windows_reactor::native::bindings::Application::Start<ref$<windows_reactor::native::bindings::ApplicationInitializationCallback> >
+             at /kache/.cargo\git\checkouts\windows-rs-a5de4a2dc783ec71\0496ec1\crates\libs\reactor/src\native\bindings.rs:342
+  48: windows_reactor::native::app::App::run_with<tuple$<>,windows_reactor::native::app::impl$14::run_component_with_policy::closure_env$0<repro_listview_reorder_selected_index::Recent> >
+             at /kache/.cargo\git\checkouts\windows-rs-a5de4a2dc783ec71\0496ec1\crates\libs\reactor/src\native\app\mod.rs:801
+  49: windows_reactor::native::app::App::run_component_with_policy<repro_listview_reorder_selected_index::Recent>
+             at /kache/.cargo\git\checkouts\windows-rs-a5de4a2dc783ec71\0496ec1\crates\libs\reactor/src\native\app\mod.rs:779
+  50: windows_reactor::native::app::App::run_component<repro_listview_reorder_selected_index::Recent>
+             at /kache/.cargo\git\checkouts\windows-rs-a5de4a2dc783ec71\0496ec1\crates\libs\reactor/src\native\app\mod.rs:772
+  51: repro_listview_reorder_selected_index::main
+             at D:\projects\reactor-repros\listview-reorder-selected-index\src\main.rs:86
+  52: core::ops::function::FnOnce::call_once<void (*)(),tuple$<> >
+             at /rustc/8bab26f4f68e0e26f0bb7960be334d5b520ea452/library\core\src\ops\function.rs:250
+note: Some details are omitted, run with `RUST_BACKTRACE=full` for a verbose backtrace.
+
+thread 'main' (8212) panicked at /rustc/8bab26f4f68e0e26f0bb7960be334d5b520ea452/library\core\src\panicking.rs:225:5:
+panic in a function that cannot unwind
+stack backtrace:
+   0:     0x7ff6c87e9f7e - std::backtrace_rs::backtrace::win64::trace
+                               at /rustc/8bab26f4f68e0e26f0bb7960be334d5b520ea452/library\std\src\..\..\backtrace\src\backtrace\win64.rs:85
+   1:     0x7ff6c87e9f7e - std::backtrace_rs::backtrace::trace_unsynchronized
+                               at /rustc/8bab26f4f68e0e26f0bb7960be334d5b520ea452/library\std\src\..\..\backtrace\src\backtrace\mod.rs:66
+   2:     0x7ff6c87e9f7e - std::sys::backtrace::_print_fmt
+                               at /rustc/8bab26f4f68e0e26f0bb7960be334d5b520ea452/library\std\src\sys\backtrace.rs:74
+   3:     0x7ff6c87e9f7e - std::sys::backtrace::impl$0::print::impl$0::fmt
+                               at /rustc/8bab26f4f68e0e26f0bb7960be334d5b520ea452/library\std\src\sys\backtrace.rs:44
+   4:     0x7ff6c87f5d21 - core::fmt::write
+                               at /rustc/8bab26f4f68e0e26f0bb7960be334d5b520ea452/library\core\src\fmt\mod.rs:0
+   5:     0x7ff6c87ecf34 - std::io::default_write_fmt
+                               at /rustc/8bab26f4f68e0e26f0bb7960be334d5b520ea452/library\std\src\io\mod.rs:622
+   6:     0x7ff6c87ecf34 - std::io::Write::write_fmt<std::sys::stdio::windows::Stderr>
+                               at /rustc/8bab26f4f68e0e26f0bb7960be334d5b520ea452/library\std\src\io\mod.rs:1977
+   7:     0x7ff6c87e22c9 - std::sys::backtrace::BacktraceLock::print
+                               at /rustc/8bab26f4f68e0e26f0bb7960be334d5b520ea452/library\std\src\sys\backtrace.rs:47
+   8:     0x7ff6c87e22c9 - std::panicking::default_hook::closure$0
+                               at /rustc/8bab26f4f68e0e26f0bb7960be334d5b520ea452/library\std\src\panicking.rs:292
+   9:     0x7ff6c87e664a - std::panicking::default_hook
+                               at /rustc/8bab26f4f68e0e26f0bb7960be334d5b520ea452/library\std\src\panicking.rs:319
+  10:     0x7ff6c87e6853 - std::panicking::panic_with_hook
+                               at /rustc/8bab26f4f68e0e26f0bb7960be334d5b520ea452/library\std\src\panicking.rs:825
+  11:     0x7ff6c87e23d4 - std::panicking::panic_handler::closure$0
+                               at /rustc/8bab26f4f68e0e26f0bb7960be334d5b520ea452/library\std\src\panicking.rs:691
+  12:     0x7ff6c87e161f - std::sys::backtrace::__rust_end_short_backtrace<std::panicking::panic_handler::closure_env$0,never$>
+                               at /rustc/8bab26f4f68e0e26f0bb7960be334d5b520ea452/library\std\src\sys\backtrace.rs:182
+  13:     0x7ff6c87e28ce - std::panicking::panic_handler
+                               at /rustc/8bab26f4f68e0e26f0bb7960be334d5b520ea452/library\std\src\panicking.rs:689
+  14:     0x7ff6c87fa617 - core::panicking::panic_nounwind_fmt
+                               at /rustc/8bab26f4f68e0e26f0bb7960be334d5b520ea452/library\core\src\intrinsics\mod.rs:2450
+  15:     0x7ff6c87fa591 - core::panicking::panic_nounwind
+                               at /rustc/8bab26f4f68e0e26f0bb7960be334d5b520ea452/library\core\src\panicking.rs:225
+  16:     0x7ff6c87fa74a - core::panicking::panic_cannot_unwind
+                               at /rustc/8bab26f4f68e0e26f0bb7960be334d5b520ea452/library\core\src\panicking.rs:337
+  17:     0x7ff6c84b1143 - windows_reactor::native::bindings::DispatcherQueueHandlerBox<windows_reactor::native::app::impl$4::enqueue::closure_env$0<windows_reactor::native::app::impl$5::wake::closure_env$0> >::Invoke<windows_reactor::native::app::impl$4::enqueue::closure_env$0<wind
+                               at /kache/.cargo\git\checkouts\windows-rs-a5de4a2dc783ec71\0496ec1\crates\libs\reactor/src\native\bindings.rs:3504
+  18:     0x7ffdf78ebb00 - _CxxFrameHandler3
+  19:     0x7ffdf78d33c7 - is_exception_typeof
+  20:     0x7ffe3dd64646 - RtlCaptureContext2
+  21:     0x7ff6c84b110f - windows_reactor::native::bindings::DispatcherQueueHandlerBox<windows_reactor::native::app::impl$4::enqueue::closure_env$0<windows_reactor::native::app::impl$5::wake::closure_env$0> >::Invoke<windows_reactor::native::app::impl$4::enqueue::closure_env$0<wind
+                               at /kache/.cargo\git\checkouts\windows-rs-a5de4a2dc783ec71\0496ec1\crates\libs\reactor/src\native\bindings.rs:3508
+  22:     0x7ffe23eb7928 - WinUICreateDispatcherQueueController
+  23:     0x7ffe23e62f8d - CoreUIRouteToTestRegistrar
+  24:     0x7ffe23e67096 - CoreUIRouteToTestRegistrar
+  25:     0x7ffe23e6e910 - CoreUIRouteToTestRegistrar
+  26:     0x7ffe23e3d5ef - CoreUIRouteToTestRegistrar
+  27:     0x7ffe23e7cb92 - CoreUIRouteToTestRegistrar
+  28:     0x7ffe23e3e5a0 - CoreUIRouteToTestRegistrar
+  29:     0x7ffe23e3e30d - CoreUIRouteToTestRegistrar
+  30:     0x7ffe23e31a60 - CoreUIRouteToTestRegistrar
+  31:     0x7ffe23e34986 - CoreUIRouteToTestRegistrar
+  32:     0x7ffe23e34cfc - CoreUIRouteToTestRegistrar
+  33:     0x7ffe23e771f3 - CoreUIRouteToTestRegistrar
+  34:     0x7ffe23e77386 - CoreUIRouteToTestRegistrar
+  35:     0x7ffe23e778fe - CoreUIRouteToTestRegistrar
+  36:     0x7ffe3b9d52e6 - CallWindowProcW
+  37:     0x7ffe3b9d4b6c - GetFocus
+  38:     0x7ffe3b9ff593 - GetWindowDpiAwarenessContext
+  39:     0x7ffe3dda5d94 - KiUserCallbackDispatcher
+  40:     0x7ffe3b891364 - NtUserGetMessage
+  41:     0x7ffe3b9eaea2 - GetMessageW
+  42:     0x7ffde4bdb6e8 - XamlCheckProcessRequirements
+  43:     0x7ffde4bdbc36 - XamlCheckProcessRequirements
+  44:     0x7ffde49e409b - XamlCheckProcessRequirements
+  45:     0x7ff6c81d0744 - windows_reactor::native::bindings::impl$44::Start::closure$0<ref$<windows_reactor::native::bindings::ApplicationInitializationCallback> >
+                               at /kache/.cargo\git\checkouts\windows-rs-a5de4a2dc783ec71\0496ec1\crates\libs\reactor/src\native\bindings.rs:343
+  46:     0x7ff6c81cd48c - windows_core::imp::factory_cache::FactoryCache<windows_reactor::native::bindings::Application,windows_reactor::native::bindings::IApplicationStatics>::call<windows_reactor::native::bindings::Application,windows_reactor::native::bindings::IApplicationStatic
+                               at /kache/.cargo\git\checkouts\windows-rs-a5de4a2dc783ec71\0496ec1\crates\libs\core/src\imp\factory_cache.rs:36
+  47:     0x7ff6c81cedf8 - windows_reactor::native::bindings::Application::IApplicationStatics<tuple$<>,windows_reactor::native::bindings::impl$44::Start::closure_env$0<ref$<windows_reactor::native::bindings::ApplicationInitializationCallback> > >
+                               at /kache/.cargo\git\checkouts\windows-rs-a5de4a2dc783ec71\0496ec1\crates\libs\reactor/src\native\bindings.rs:362
+  48:     0x7ff6c81cee0e - windows_reactor::native::bindings::Application::Start<ref$<windows_reactor::native::bindings::ApplicationInitializationCallback> >
+                               at /kache/.cargo\git\checkouts\windows-rs-a5de4a2dc783ec71\0496ec1\crates\libs\reactor/src\native\bindings.rs:342
+  49:     0x7ff6c81c2dae - windows_reactor::native::app::App::run_with<tuple$<>,windows_reactor::native::app::impl$14::run_component_with_policy::closure_env$0<repro_listview_reorder_selected_index::Recent> >
+                               at /kache/.cargo\git\checkouts\windows-rs-a5de4a2dc783ec71\0496ec1\crates\libs\reactor/src\native\app\mod.rs:801
+  50:     0x7ff6c81c2afa - windows_reactor::native::app::App::run_component_with_policy<repro_listview_reorder_selected_index::Recent>
+                               at /kache/.cargo\git\checkouts\windows-rs-a5de4a2dc783ec71\0496ec1\crates\libs\reactor/src\native\app\mod.rs:779
+  51:     0x7ff6c81c2a69 - windows_reactor::native::app::App::run_component<repro_listview_reorder_selected_index::Recent>
+                               at /kache/.cargo\git\checkouts\windows-rs-a5de4a2dc783ec71\0496ec1\crates\libs\reactor/src\native\app\mod.rs:772
+  52:     0x7ff6c81d1327 - repro_listview_reorder_selected_index::main
+                               at D:\projects\reactor-repros\listview-reorder-selected-index\src\main.rs:86
+  53:     0x7ff6c81ccbab - core::ops::function::FnOnce::call_once<void (*)(),tuple$<> >
+                               at /rustc/8bab26f4f68e0e26f0bb7960be334d5b520ea452/library\core\src\ops\function.rs:250
+  54:     0x7ff6c81c4a2e - std::sys::backtrace::__rust_begin_short_backtrace<void (*)(),tuple$<> >
+                               at /rustc/8bab26f4f68e0e26f0bb7960be334d5b520ea452/library\std\src\sys\backtrace.rs:166
+  55:     0x7ff6c81d0911 - std::rt::lang_start::closure$0<tuple$<> >
+                               at /rustc/8bab26f4f68e0e26f0bb7960be334d5b520ea452/library\std\src\rt.rs:206
+  56:     0x7ff6c87e5a30 - std::rt::lang_start_internal::closure$0
+                               at /rustc/8bab26f4f68e0e26f0bb7960be334d5b520ea452/library\std\src\rt.rs:175
+  57:     0x7ff6c87e5a30 - std::panicking::catch_unwind::do_call
+                               at /rustc/8bab26f4f68e0e26f0bb7960be334d5b520ea452/library\std\src\panicking.rs:581
+  58:     0x7ff6c87e5a30 - std::panicking::catch_unwind
+                               at /rustc/8bab26f4f68e0e26f0bb7960be334d5b520ea452/library\std\src\panicking.rs:544
+  59:     0x7ff6c87e5a30 - std::panic::catch_unwind
+                               at /rustc/8bab26f4f68e0e26f0bb7960be334d5b520ea452/library\std\src\panic.rs:359
+  60:     0x7ff6c87e5a30 - std::rt::lang_start_internal
+                               at /rustc/8bab26f4f68e0e26f0bb7960be334d5b520ea452/library\std\src\rt.rs:171
+  61:     0x7ff6c81cf88a - std::rt::lang_start<tuple$<> >
+                               at /rustc/8bab26f4f68e0e26f0bb7960be334d5b520ea452/library\std\src\rt.rs:205
+  62:     0x7ff6c81d55b9 - main
+  63:     0x7ff6c87f891f - invoke_main
+                               at D:\a\_work\1\s\src\vctools\crt\vcstartup\src\startup\exe_common.inl:78
+  64:     0x7ff6c87f891f - __scrt_common_main_seh
+                               at D:\a\_work\1\s\src\vctools\crt\vcstartup\src\startup\exe_common.inl:288
+  65:     0x7ffe3cf3dda7 - BaseThreadInitThunk
+  66:     0x7ffe3dcbee4c - RtlUserThreadStart
+thread caused non-unwinding panic. aborting.
