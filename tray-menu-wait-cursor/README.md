@@ -26,8 +26,6 @@ Two windows end up under the pointer:
 
 Until the popup's input site is ready, the pointer is over a window that isn't processing input.
 
-Making the host `WS_EX_TRANSPARENT` and moving the anchor by the shadow margin (16 DIPs at the monitor's DPI) fixes it.
-
 Not yet confirmed on master `0496ec1` (it was seen on 0.100.0 before #5055 changed where the menu is anchored).
 
 Environment: Windows 11 (build 26340), Windows App SDK 2.x, Rust 1.97.1, 150% display scale.
