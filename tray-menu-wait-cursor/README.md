@@ -26,6 +26,6 @@ Two windows end up under the pointer:
 
 Until the popup's input site is ready, the pointer is over a window that isn't processing input.
 
-Not yet confirmed on master `0496ec1` (it was seen on 0.100.0 before #5055 changed where the menu is anchored).
+Reproduces on master `0496ec1` (2026-10-25): the busy cursor shows on every right-click.
 
 Environment: Windows 11 (build 26340), Windows App SDK 2.x, Rust 1.97.1, 150% display scale.

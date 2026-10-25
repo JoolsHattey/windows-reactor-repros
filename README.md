@@ -14,6 +14,6 @@ cargo run -p repro-<folder name>
 | [`titlebar-right-padding-scale`](titlebar-right-padding-scale) | TitleBar leaves a gap before the caption buttons above 100% scaling | Reproduces |
 | [`titlebar-height`](titlebar-height) | No way to make a TitleBar taller than `Tall`, or stretch its content | Reproduces |
 | [`pointer-side-buttons-handled`](pointer-side-buttons-handled) | Mouse Back/Forward buttons, and presses a child already handled | Reproduces |
-| [`tray-menu-wait-cursor`](tray-menu-wait-cursor) | Tray menu shows the busy cursor on every right-click | Not yet confirmed on master |
+| [`tray-menu-wait-cursor`](tray-menu-wait-cursor) | Tray menu shows the busy cursor on every right-click | Reproduces |
 
 Tested on Windows 11 with the Windows App SDK 2 runtime, Rust 1.97.1, at 150% display scale.
