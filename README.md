@@ -18,8 +18,4 @@ cargo run -p repro-<folder name>
 
 Tested on Windows 11 with the Windows App SDK 2 runtime, Rust 1.97.1, at 150% display scale.
 
-WinUI bugs that Reactor works around get a plain C# WinUI repro instead, outside the Cargo workspace. Each folder's README says how to run it.
-
-| Folder | WinUI issue | Checked on |
-|---|---|---|
-| [`winui-minimised-first-layout`](winui-minimised-first-layout) | A `TitleBar` set as the window's title bar fails fast when the window's first layout happens while it's minimised | Windows App SDK 2.5.1 and 2.6.4: reproduces on every run |
+WinUI bugs that Reactor works around get a plain C# WinUI repro instead, in [winui-repros](https://github.com/JoolsHattey/winui-repros).
