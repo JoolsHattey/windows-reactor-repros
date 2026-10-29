@@ -5,4 +5,5 @@ edition = "2024"
 publish = false
 
 [dependencies]
-windows-reactor = { workspace = true }
+# Kept on 0496ec1: the bug was fixed upstream by #5222.
+windows-reactor = { git = "https://github.com/microsoft/windows-rs", rev = "0496ec19116f1dac690daf31fcb96769118d9bac" }

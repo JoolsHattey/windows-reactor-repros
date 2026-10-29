@@ -10,7 +10,7 @@ From the repository root:
 cargo run -p repro-listview-reorder-selected-index
 ```
 
-Pinned to `microsoft/windows-rs` master `0496ec1` (2026-10-24) in the workspace `Cargo.toml`. No other dependencies.
+Pinned to `microsoft/windows-rs` master `0496ec1` (2026-10-24) in its own `Cargo.toml`, not the workspace pin: fixed upstream by [#5222](https://github.com/microsoft/windows-rs/pull/5222) (2026-10-27). No other dependencies.
 
 ## Steps
 

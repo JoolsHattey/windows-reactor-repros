@@ -10,7 +10,7 @@ From the repository root:
 cargo run -p repro-titlebar-height
 ```
 
-Pinned to `microsoft/windows-rs` master `0496ec1` (2026-10-24) in the workspace `Cargo.toml`. No other dependencies.
+Pinned to `microsoft/windows-rs` master `8786f59d1` (2026-10-29) in the workspace `Cargo.toml`. No other dependencies.
 
 ## What happens
 

@@ -10,7 +10,7 @@ From the repository root:
 cargo run -p repro-pointer-side-buttons-handled
 ```
 
-Pinned to `microsoft/windows-rs` master `0496ec1` (2026-10-24) in the workspace `Cargo.toml`. No other dependencies. You need a mouse with Back/Forward (X1/X2) buttons.
+Pinned to `microsoft/windows-rs` master `8786f59d1` (2026-10-29) in the workspace `Cargo.toml`. No other dependencies. You need a mouse with Back/Forward (X1/X2) buttons.
 
 ## Steps
 
@@ -19,7 +19,7 @@ Pinned to `microsoft/windows-rs` master `0496ec1` (2026-10-24) in the workspace 
 2. Press any button over a list row or in the text box.
    **Actual:** "Presses seen" doesn't change. `Border::on_pointer_pressed` subscribes to the plain `PointerPressed` event, which doesn't fire for presses a child control already handled. WinUI delivers those through `UIElement.AddHandler(PointerPressedEvent, handler, handledEventsToo: true)`.
 
-Both reproduce on master `0496ec1`, as of 2026-10-25:
+Both reproduce on master `0496ec1`, as of 2026-10-25 (on `8786f59d1`, 2026-10-29, the handled-press half reproduces the same way; the side-button half is unchanged in the code but wasn't re-run):
 
 - After a Back (X1) press over empty space, "Presses seen" goes up, but the last press shows `left=false right=false middle=false`.
 - After a left click on "Row two", the row is selected, but "Presses seen" doesn't change.
